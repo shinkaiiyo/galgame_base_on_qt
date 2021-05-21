@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QWidget>
 #include <QList>
+#include <QString>
 class QLabel;
 class QMouseEvent;
 class QTimer;
@@ -20,7 +21,8 @@ public:
 private:
     void layoutUI();
     void control();
-    void changeWord(char* word);
+    void initWord();
+    void changeWord(const QString &word);
 
 private:
     QLabel *buttomPic;
@@ -29,7 +31,7 @@ private:
     int textNumber;
     QMediaPlayer * player;
     QList<int> saveList;
-    QList<int> pageList;
+    QList<QString> pageList;
 
 protected:
     void mouseReleaseEvent(QMouseEvent *event);
