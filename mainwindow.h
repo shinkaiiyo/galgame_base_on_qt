@@ -2,7 +2,7 @@
 #define MainWindow_H
 
 #include <QMainWindow>
-
+#include <QList>
 class QLabel;
 class QTimer;
 class QMouseEvent;
@@ -32,6 +32,8 @@ private:
     QLabel *firstPic;
     QLabel *secendPic;
     QLabel *thridPic;
+    QList<int> saveList;
+    QList<int> pageList;
 
     MainWidget *mainWidget;
     ButtomBar *buttomBar;

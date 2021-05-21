@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QWidget>
-
+#include <QList>
 class QLabel;
 class QMouseEvent;
 class QTimer;
@@ -28,6 +28,8 @@ private:
     QTimer *textTimer;
     int textNumber;
     QMediaPlayer * player;
+    QList<int> saveList;
+    QList<int> pageList;
 
 protected:
     void mouseReleaseEvent(QMouseEvent *event);

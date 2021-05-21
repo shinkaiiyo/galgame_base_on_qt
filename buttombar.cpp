@@ -2,8 +2,10 @@
 #include <QLabel>
 #include <QMouseEvent>
 #include <QTimer>
+#include <QList>
 #include <QMediaPlayer>
 #include <QUrl>
+#include <QInputDialog>
 
 ButtomBar::ButtomBar(QWidget *parent): QWidget(parent), buttomPic(NULL), buttomWord(NULL),
     textTimer(NULL), textNumber(0), player(NULL)
@@ -161,12 +163,24 @@ void ButtomBar::slotChangeText()
 
 void ButtomBar::slotSavePressed()
 {
+    bool ok = false;
+    int inputValue = QInputDialog::getInt(NULL, "请选择存档序号", "vlaue:",
+                                          1, -1, 40, 1, &ok);
+    if (ok)
+    {
 
+    }
 }
 
 void ButtomBar::slotLoadPressed()
 {
+    bool ok = false;
+    int inputValue = QInputDialog::getInt(NULL, "请选择读档序号", "vlaue:",
+                                          1, -1, 40, 1, &ok);
+    if (ok)
+    {
 
+    }
 }
 
 void ButtomBar::slotQsavePressed()

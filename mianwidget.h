@@ -4,8 +4,11 @@
 #include <QObject>
 #include <QWidget>
 
+#include <QList>
+
 class QLabel;
 class QTimer;
+
 class MainWidget : public QWidget
 {
     Q_OBJECT
@@ -23,6 +26,8 @@ private:
     QLabel *backgroundLabel;
     QTimer *pageTimer;
     int curPage;
+
+    QList<int> saveList;
 
 };
 
