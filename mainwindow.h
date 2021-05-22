@@ -42,6 +42,7 @@ private:
 
 public slots:
     void slotChangeView();
+    void slotMainPage();
 };
 
 #endif // MainWindow_H

@@ -1,10 +1,19 @@
 #include "mianwidget.h"
 #include <QLabel>
+#include <QTimer>
 
 MainWidget::MainWidget(QWidget *parent): QWidget(parent), backgroundLabel(NULL), peopleLable(NULL), pageTimer(NULL), curPage(0)
 {
     layoutUI();
     control();
+}
+
+void MainWidget::setcurPage(int page)
+{
+    curPage = saveList.at(page);
+    pageTimer->stop();
+    pageTimer->start(10000);
+    //slotChangeText();
 }
 
 void MainWidget::layoutUI()
