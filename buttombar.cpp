@@ -7,7 +7,7 @@
 #include <QUrl>
 #include <QInputDialog>
 
-ButtomBar::ButtomBar(QWidget *parent): QWidget(parent), buttomPic(NULL), buttomWord(NULL),
+ButtomBar::ButtomBar(QWidget *parent): QLabel(parent), buttomPic(NULL), buttomWord(NULL),
     textTimer(NULL), textNumber(0), player(NULL)
 {
     layoutUI();
@@ -28,6 +28,7 @@ void ButtomBar::layoutUI()
     buttomWord = new QLabel(this);
     buttomPic->setGeometry(0, 0, 960, 238);
     buttomWord->setGeometry(238, 25, 800, 100);
+    setStyleSheet("QLabel{image:url(logginpage/框.png);}");
 }
 
 void ButtomBar::control()
@@ -230,7 +231,7 @@ void ButtomBar::mouseReleaseEvent(QMouseEvent *event)
     {
         slotSkipPressed();
     }
-    else if(event->x() <= 824 && event->y() <= 232 && event->x() >= 823 && event->y() >= 214)
+    else if(event->x() <= 950 && event->y() <= 232 && event->x() >= 863 && event->y() >= 214)
     {
         slotSecedePressed();
     }
