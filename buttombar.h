@@ -15,8 +15,8 @@ class ButtomBar : public QWidget
 public:
     ButtomBar(QWidget *parent);
 
-public:  
-    void startTimer(int interval);
+public:
+    void setTextNumber(int number);
 
 private:
     void layoutUI();
@@ -45,6 +45,9 @@ public slots:
     void slotAutoPressed();
     void slotSkipPressed();
     void slotSecedePressed();
+
+signals:
+    void signalMainPage();
 
 };
 

@@ -4,6 +4,7 @@
 #include <QLabel>
 #include <QTimer>
 #include <QMouseEvent>
+#include <QInputDialog>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
@@ -80,6 +81,7 @@ void MainWindow::control()
     changeViewTimer = new QTimer(this);
     changeViewTimer->start(10000);
     connect(changeViewTimer, SIGNAL(timeout()), this, SLOT(slotChangeView()));
+    connect(buttomBar, SIGNAL(signalMainPage()), this, SLOT(slotMainPage()));
 }
 
 void MainWindow::startGame()
@@ -87,12 +89,18 @@ void MainWindow::startGame()
     thridPic->hide();
     mainWidget->show();
     buttomBar->show();
-    buttomBar->startTimer(10000);
 }
 
 void MainWindow::loadGame()
 {
-    //TODO
+    bool ok = false;
+    int inputValue = QInputDialog::getInt(NULL, "请选择读档序号", "vlaue:",
+                                          1, -1, 40, 1, &ok);
+    if (ok)
+    {
+        buttomBar->setTextNumber(inputValue);
+        mainWidget->setcurPage(inputValue);
+    }
 }
 
 void MainWindow::extra()
@@ -126,4 +134,13 @@ void MainWindow::slotChangeView()
             changeViewTimer->stop();
         }
     }
+}
+
+void MainWindow::slotMainPage()
+{
+    secendPic->hide();
+    firstPic->hide();
+    buttomBar->hide();
+    mainWidget->hide();
+    thridPic->show();
 }

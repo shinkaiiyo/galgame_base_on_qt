@@ -14,9 +14,12 @@ ButtomBar::ButtomBar(QWidget *parent): QWidget(parent), buttomPic(NULL), buttomW
     control();
 }
 
-void ButtomBar::startTimer(int interval)
+void ButtomBar::setTextNumber(int number)
 {
-    textTimer->start(interval);
+    textNumber = saveList.at(number);
+    textTimer->stop();
+    textTimer->start(10000);
+    slotChangeText();
 }
 
 void ButtomBar::layoutUI()
@@ -158,7 +161,42 @@ void ButtomBar::initWord()
     pageList.append("女队员：总长，车已经准备好了。");
     //first choose
 
-
+    pageList.append("江珂：没时间解释了，快上车。");
+    pageList.append("半推半就的上了车，不过车里面还蛮大的。与外观不符的是这台车子内部丝毫不亚于一些高档房车，功能完善程度叹为观止。");
+    pageList.append("身居其中完全可以自由的预览到车外的情况。如此奢侈的内部装修，大概是某个领导私吞国家拨款军费的直接表象了");
+    pageList.append("广播：上津门交通安全部门提醒您 道路千万条 安全第一条 出行不规范 亲人两行泪");
+    pageList.append("完全没有感情的棒读，自然也不会真的有人会去听从劝告。毕竟人类对于自己不感兴趣的东西既无法看到也无法认知。");//change page
+    pageList.append("果然，世界会随着自己改变这种事，根本不可能。说到底，我们又是何时认识到自己不是世界的主角呢。");//change page
+    pageList.append("一群整齐划一的考斯普雷的人，虽然不知道他们在考斯什么，嘛，多半他们自己也不知道考斯什么仅仅是为了当前蹭热度吧");
+    pageList.append("众教徒：啊~啊~~~");
+    pageList.append("单纯的富有感情的拖长中音，人员看起来全都是女性，年纪可能最大不会超过40岁，最小的，唔，大概也就刚刚小学毕业的亚子。");
+    pageList.append("乔丹：哎？那堆教徒里是有美女吗你怎么这么在意。");
+    pageList.append("你：教徒？");
+    pageList.append("乔丹：对啊，那群人好像信奉什么外神，主张减少人类干涉让生态恢复平衡，\n"
+                    "现在好像是每天例行的圣歌吧，自从这群人在这里，倒是跳广场舞的大妈不见了。");
+    pageList.append("你：这种聚众活动政府不管嘛");
+    pageList.append("江珂：倒不是不管，但毕竟他们没有做出任何危害城市的举动，反而更像是提倡环保的友好组织，\n"
+                    "虽然会做一些理念宣传，但更多的时候是在进行实际的环境维护工作，所以上级也自然默许存在了。");
+    pageList.append("的确，如果提倡环保的话某种意义上这还算是个不错的宗教");
+    pageList.append("乔丹：但是我有一点就很气啊");
+    pageList.append("林瑾：是因为那个教会唯一的男人是作为教主的糟老头子吗");
+    pageList.append("乔丹：对啊我也想坐拥如此庞大的后宫啊....哎？");
+    pageList.append("林瑾：果然是渣男啊");
+    pageList.append("江珂：一开口就是老渣男了");
+    pageList.append("白芊：...熟练的渣男");
+    pageList.append("0：喵呜！");
+    pageList.append("喂，你看着我也没用，这时候如果帮助你大概会变成女性公敌吧");
+    pageList.append("乔丹：兄弟~这是个正常男人都会想要的吧~~");
+    pageList.append("心理和感情常常是不相等的，有时候会做出砍死完全不合理的结论也是这个原因。\n"
+                    "不过单纯满足虚荣心的话后宫确实很棒，但只是想想自然不能这么讲就是了。");
+    pageList.append("你：汝与曹贼何异...");
+    pageList.append("乔丹：男人变态有什么错！");
+    pageList.append("上次这样的喧闹，是什么时候呢");//change page
+    pageList.append("你：痛...");
+    pageList.append("刚才那是什么，回忆吗，看来记忆恢复伴随头疼的说法是真的了。");
+    pageList.append("白芊：哥！怎么了哪里不舒服");
+    pageList.append("你：没什么，可能这车密封性太好了有点缺氧。");
+    pageList.append("江珂：要下车吗，虽然没多远了。");
 
 }
 
@@ -196,13 +234,17 @@ void ButtomBar::mouseReleaseEvent(QMouseEvent *event)
     {
         slotSecedePressed();
     }
+    else
+    {
+       slotChangeText();
+    }
 }
 
 void ButtomBar::slotChangeText()
 {
     switch(textNumber)
     {
-
+        changeWord(pageList.at(textNumber));
     }
     textNumber += 1;
 }
@@ -226,32 +268,48 @@ void ButtomBar::slotLoadPressed()
     if (ok)
     {
         textNumber = saveList.at(inputValue);
+        textTimer->stop();
+        textTimer->start(10000);
+        slotChangeText();
     }
 }
 
 void ButtomBar::slotQsavePressed()
 {
-
+    saveList.insert(0, textNumber);
 }
 
 void ButtomBar::slotQloadPressed()
 {
-
+    textNumber = saveList.at(0);
+    textTimer->stop();
+    textTimer->start(10000);
+    slotChangeText();
 }
 
 void ButtomBar::slotAutoPressed()
 {
-
+    if(textTimer->isActive())
+    {
+        textTimer->stop();
+    }
+    else
+    {
+        textTimer->start(10000);
+    }
 }
 
 void ButtomBar::slotSkipPressed()
 {
-
+    textNumber += 1;
+    textTimer->stop();
+    textTimer->start(10000);
+    slotChangeText();
 }
 
 void ButtomBar::slotSecedePressed()
 {
-
+    emit signalMainPage();
 }
 
 

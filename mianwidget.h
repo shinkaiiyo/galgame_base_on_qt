@@ -15,7 +15,8 @@ class MainWidget : public QWidget
 public:
     MainWidget(QWidget *parent);
 
-protected:
+public:
+    void setcurPage(int page);
 
 private:
     void layoutUI();
@@ -26,7 +27,6 @@ private:
     QLabel *backgroundLabel;
     QTimer *pageTimer;
     int curPage;
-
     QList<int> saveList;
 
 };
