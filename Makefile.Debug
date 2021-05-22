@@ -213,6 +213,7 @@ debug/moc_MainWindow.cpp: C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QMain
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qicon.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QList \
 		MainWindow.h
 	C:\Qt\Qt5.6.3\5.6.3\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/mkspecs/win32-g++ -ID:/code/final_course/ver1 -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtANGLE -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtNetwork -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore MainWindow.h -o debug\moc_MainWindow.cpp
 
@@ -271,7 +272,9 @@ debug/moc_ButtomBar.cpp: C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QObject \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qcontainerfwd.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qobject_impl.h \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QLabel \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qlabel.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qframe.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qwindowdefs.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qwindowdefs_win.h \
@@ -321,6 +324,9 @@ debug/moc_ButtomBar.cpp: C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QObject \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtouchdevice.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QList \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QString \
 		ButtomBar.h
 	C:\Qt\Qt5.6.3\5.6.3\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/mkspecs/win32-g++ -ID:/code/final_course/ver1 -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtANGLE -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtNetwork -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore ButtomBar.h -o debug\moc_ButtomBar.cpp
 
@@ -429,6 +435,7 @@ debug/moc_mianwidget.cpp: C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QObject 
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtouchdevice.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QList \
 		mianwidget.h
 	C:\Qt\Qt5.6.3\5.6.3\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/mkspecs/win32-g++ -ID:/code/final_course/ver1 -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtANGLE -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtNetwork -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore mianwidget.h -o debug\moc_mianwidget.cpp
 
@@ -556,6 +563,7 @@ debug/main.o: main.cpp MainWindow.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qicon.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QList \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QApplication \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qapplication.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qcoreapplication.h \
@@ -673,6 +681,7 @@ debug/MainWindow.o: MainWindow.cpp mainwindow.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qicon.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QList \
 		mianwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QObject \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QWidget \
@@ -680,10 +689,19 @@ debug/MainWindow.o: MainWindow.cpp mainwindow.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QLabel \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qlabel.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qframe.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QString \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QTimer \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qtimer.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qbasictimer.h \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QMouseEvent
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QMouseEvent \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QInputDialog \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qinputdialog.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qdialog.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qlineedit.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtextcursor.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtextformat.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qpen.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtextoption.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\MainWindow.o MainWindow.cpp
 
 debug/ButtomBar.o: ButtomBar.cpp ButtomBar.h \
@@ -742,7 +760,9 @@ debug/ButtomBar.o: ButtomBar.cpp ButtomBar.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qcontainerfwd.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qobject_impl.h \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QLabel \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qlabel.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qframe.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qwindowdefs.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qwindowdefs_win.h \
@@ -792,9 +812,9 @@ debug/ButtomBar.o: ButtomBar.cpp ButtomBar.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtouchdevice.h \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QLabel \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qlabel.h \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qframe.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QList \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QString \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QMouseEvent \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QTimer \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qtimer.h \
@@ -808,13 +828,20 @@ debug/ButtomBar.o: ButtomBar.cpp ButtomBar.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediaresource.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtNetwork/qnetworkrequest.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QSharedDataPointer \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QString \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QUrl \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QVariant \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediaenumdebug.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qmetaobject.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qaudio.h \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtNetwork/qnetworkconfiguration.h
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtNetwork/qnetworkconfiguration.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QInputDialog \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qinputdialog.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qdialog.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qlineedit.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtextcursor.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtextformat.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qpen.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtextoption.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\ButtomBar.o ButtomBar.cpp
 
 debug/mianwidget.o: mianwidget.cpp mianwidget.h \
@@ -923,9 +950,13 @@ debug/mianwidget.o: mianwidget.cpp mianwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtouchdevice.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QList \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QLabel \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qlabel.h \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qframe.h
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qframe.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QTimer \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qtimer.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mianwidget.o mianwidget.cpp
 
 debug/moc_MainWindow.o: debug/moc_MainWindow.cpp 

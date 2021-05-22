@@ -2,6 +2,7 @@
 #define ButtomBar_H
 
 #include <QObject>
+#include <QLabel>
 #include <QWidget>
 #include <QList>
 #include <QString>
@@ -9,7 +10,7 @@ class QLabel;
 class QMouseEvent;
 class QTimer;
 class QMediaPlayer;
-class ButtomBar : public QWidget
+class ButtomBar : public QLabel
 {
     Q_OBJECT
 public:

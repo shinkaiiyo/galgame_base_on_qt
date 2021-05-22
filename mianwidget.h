@@ -23,8 +23,8 @@ private:
     void control();
 
 private:
-    QLabel *peopleLable;
     QLabel *backgroundLabel;
+    QLabel *peopleLable;  
     QTimer *pageTimer;
     int curPage;
     QList<int> saveList;
