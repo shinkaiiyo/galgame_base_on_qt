@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QList>
+#include <QMediaPlayer>
 class QLabel;
 class QTimer;
 class QMouseEvent;
@@ -37,12 +38,13 @@ private:
 
     MainWidget *mainWidget;
     ButtomBar *buttomBar;
-
+    QMediaPlayer * player;
     QTimer *changeViewTimer;
 
 public slots:
     void slotChangeView();
     void slotMainPage();
+    void slotRestartMusic(QMediaPlayer::State newState);
 };
 
 #endif // MainWindow_H

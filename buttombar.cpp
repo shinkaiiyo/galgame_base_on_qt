@@ -6,8 +6,9 @@
 #include <QMediaPlayer>
 #include <QUrl>
 #include <QInputDialog>
+#include <QMediaPlaylist>
 
-ButtomBar::ButtomBar(QWidget *parent): QLabel(parent), buttomPic(NULL), buttomWord(NULL),
+ButtomBar::ButtomBar(QWidget *parent): QWidget(parent), buttomPic(NULL), buttomWord(NULL),
     textTimer(NULL), textNumber(0), player(NULL)
 {
     layoutUI();
@@ -27,14 +28,67 @@ void ButtomBar::layoutUI()
     buttomPic = new QLabel(this);
     buttomWord = new QLabel(this);
     buttomPic->setGeometry(0, 0, 960, 238);
-    buttomWord->setGeometry(238, 25, 800, 100);
-    setStyleSheet("QLabel{image:url(logginpage/框.png);}");
+    buttomWord->setGeometry(238, 25, 800, 200);
+    buttomWord->setStyleSheet("QLabel{font-size: 10px;text-align: center center}");
+    buttomPic->setStyleSheet("QLabel{image:url(logginpage/框.png);}");
 }
 
 void ButtomBar::control()
 {
     textTimer = new QTimer(this);
     player = new QMediaPlayer(this);
+    playList = new QMediaPlaylist(this);
+    playList->addMedia(QUrl::fromLocalFile("cv/主/白零/电码1.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/M/1恭迎多时了.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/M/2吾乃汝内心期望而产生.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/M/3如若这是汝所期望的.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/M/4那么接下来.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/M/5擆擵擏懱.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/M/1恭迎多时了.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/M/6因为事故.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/M/7那么.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/M/8愙壓棃.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/M/9啊差点忘了.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("音效/推门.WAV"));
+    playList->addMedia(QUrl::fromLocalFile("cv/配/？？？/凭自己的.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/配/？？？/凭自己的.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/配/？？？/路过的74.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/配/？？？/不好意思.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/配/？？？/不逗你了.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("音效/咚咚咚咚的敲门音效.mp3"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/乔丹/兄弟！.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/白芊/555哥哥抱抱——.mp3"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/江珂/JK1.mp3"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/江珂/JK2.mp3"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/白零/喵！.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/白零/喵~嗷！.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/林瑾/人家等你好辛苦.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/乔丹/好啦好啦别吓唬.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/林瑾/乔丹你也在这啊.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/乔丹/明明我先.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/白芊/其实我一直都在.mp3"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/江珂/JK3.mp3"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/白芊/帮你换衣服.mp3"));
+    playList->addMedia(QUrl::fromLocalFile("cv/配/npc/队长（女）/车准备好了.mp3"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/江珂/JK4.mp3"));
+    playList->addMedia(QUrl::fromLocalFile("cv/配/npc/广播/安全交通部门.mP3"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/乔丹/那堆教徒.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/乔丹/对啊那群人信奉.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/江珂/JK5.mp3"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/乔丹/但是有一点.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/林瑾/教会唯一的男人.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/乔丹/庞大的后宫.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/林瑾/果然是渣男.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/江珂/JK6.mp3"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/白芊/熟练的渣男.mp3"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/白零/喵呜~.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/乔丹/正常男人都会想要的.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/乔丹/男人变态.m4a"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/白芊/哪里不舒服.mp3"));
+    playList->addMedia(QUrl::fromLocalFile("cv/主/江珂/JK7.mp3"));
+    playList->setPlaybackMode(QMediaPlaylist::CurrentItemOnce);
+    playList->setCurrentIndex(0);
+    player->setPlaylist(playList);
     connect(textTimer, SIGNAL(timeout()), this, SLOT(slotChangeText()));
 }
 
@@ -70,8 +124,6 @@ void ButtomBar::initWord()
     pageList.append("M:接下来汝之肉身即将苏醒，祝愿汝可以充分享受这片惬意的生活空间。");
     pageList.append("M:啊，差点忘了，排除所有错误答案后剩下的那个无论多反常都是正确的，\n"
                "所以要记得及时存档");
-    pageList.append("M:啊，差点忘了，排除所有错误答案后剩下的那个无论多反常都是正确的，\n"
-               "所以要记得及时存档");
     pageList.append("-.--..--.....-./--..----..---../-.-..-----.----/-.......------.-/\n"
                     "---.--.-....-../-...-.----.---.-");
     pageList.append("-...-.------.---/-.-..-.-.-....-/-.-------...-.-");
@@ -94,6 +146,7 @@ void ButtomBar::initWord()
     pageList.append("？？？：不逗你了，我只是个普通的打工人罢了，\n"
                     "接下来的时间就交给你的家属和亲友啦，我还有其他的工要打，有缘再见~");
     pageList.append("话音未落，少女已经不见了踪影，速度之快堪比中午等待下课铃声瞬间冲向食堂的学生。");
+    pageList.append("请进");
     pageList.append("乔丹：兄——弟——！！！");
     pageList.append("我天，怎么又是男人。等等我为什么要说又");
     pageList.append("虽然具体记不太清，但眼前这个金发男子无疑是从小的好兄弟乔丹，\n"

@@ -80,8 +80,10 @@ void MainWindow::control()
 {
     changeViewTimer = new QTimer(this);
     changeViewTimer->start(10000);
+    player = new QMediaPlayer;
     connect(changeViewTimer, SIGNAL(timeout()), this, SLOT(slotChangeView()));
     connect(buttomBar, SIGNAL(signalMainPage()), this, SLOT(slotMainPage()));
+    connect(player, SIGNAL(stateChanged(QMediaPlayer::State)), this, SLOT(slotRestartMusic(QMediaPlayer::State)));
 }
 
 void MainWindow::startGame()
@@ -132,6 +134,9 @@ void MainWindow::slotChangeView()
             secendPic->hide();
             thridPic->show();
             changeViewTimer->stop();
+            player->setMedia(QUrl::fromLocalFile("7.mp3"));
+            player->setVolume(50);
+            player->play();
         }
     }
 }
@@ -143,4 +148,14 @@ void MainWindow::slotMainPage()
     buttomBar->hide();
     mainWidget->hide();
     thridPic->show();
+}
+
+void MainWindow::slotRestartMusic(QMediaPlayer::State newState)
+{
+    if(QMediaPlayer::State::StoppedState == newState)
+    {
+        player->setMedia(QUrl::fromLocalFile("7.mp3"));
+        player->setVolume(50);
+        player->play();
+    }
 }

@@ -6,11 +6,11 @@
 #include <QWidget>
 #include <QList>
 #include <QString>
-class QLabel;
 class QMouseEvent;
 class QTimer;
 class QMediaPlayer;
-class ButtomBar : public QLabel
+class QMediaPlaylist;
+class ButtomBar : public QWidget
 {
     Q_OBJECT
 public:
@@ -33,6 +33,7 @@ private:
     QMediaPlayer * player;
     QList<int> saveList;
     QList<QString> pageList;
+    QMediaPlaylist *playList;
 
 protected:
     void mouseReleaseEvent(QMouseEvent *event);
