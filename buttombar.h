@@ -9,7 +9,6 @@
 class QMouseEvent;
 class QTimer;
 class QMediaPlayer;
-class QMediaPlaylist;
 class ButtomBar : public QWidget
 {
     Q_OBJECT
@@ -33,7 +32,7 @@ private:
     QMediaPlayer * player;
     QList<int> saveList;
     QList<QString> pageList;
-    QMediaPlaylist *playList;
+
 
 protected:
     void mouseReleaseEvent(QMouseEvent *event);
@@ -50,6 +49,7 @@ public slots:
 
 signals:
     void signalMainPage();
+    void signalChoose();
 
 };
 

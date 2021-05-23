@@ -9,6 +9,7 @@ class QTimer;
 class QMouseEvent;
 class MainWidget;
 class ButtomBar;
+class QPushButton;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -40,11 +41,15 @@ private:
     ButtomBar *buttomBar;
     QMediaPlayer * player;
     QTimer *changeViewTimer;
+    QPushButton *firstChoose;
+    QPushButton *secondChoose;
 
 public slots:
     void slotChangeView();
     void slotMainPage();
     void slotRestartMusic(QMediaPlayer::State newState);
+    void slotChoose();
+    void slotFinishChoose();
 };
 
 #endif // MainWindow_H

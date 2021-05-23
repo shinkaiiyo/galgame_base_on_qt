@@ -20,6 +20,7 @@ void MainWidget::layoutUI()
 {
     backgroundLabel = new QLabel(this);
     peopleLable = new QLabel(this);
+
     peopleLable->setGeometry(0, 0, 300, 540);
     backgroundLabel->setGeometry(0, 0, 960, 540);
 }
