@@ -5,6 +5,8 @@
 #include <QTimer>
 #include <QMouseEvent>
 #include <QInputDialog>
+#include <iostream>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
@@ -65,6 +67,7 @@ void MainWindow::layoutUI()
 
     mainWidget->setGeometry(0, 0, 960, 540);
     buttomBar->setGeometry(0, 540, 960, 238);
+    buttomBar->setMainWidget(mainWidget);
 
     firstPic->setStyleSheet("QLabel{image:url(logginpage/1.jpg);}");
     secendPic->setStyleSheet("QLabel{image:url(logginpage/2.jpg);}");
@@ -79,7 +82,7 @@ void MainWindow::layoutUI()
 void MainWindow::control()
 {
     changeViewTimer = new QTimer(this);
-    changeViewTimer->start(10000);
+    changeViewTimer->start(1);
     connect(changeViewTimer, SIGNAL(timeout()), this, SLOT(slotChangeView()));
     connect(buttomBar, SIGNAL(signalMainPage()), this, SLOT(slotMainPage()));
 }
@@ -96,6 +99,7 @@ void MainWindow::loadGame()
     bool ok = false;
     int inputValue = QInputDialog::getInt(NULL, "请选择读档序号", "vlaue:",
                                           1, -1, 40, 1, &ok);
+
     if (ok)
     {
         buttomBar->setTextNumber(inputValue);

@@ -8,7 +8,7 @@
 #include <QInputDialog>
 
 ButtomBar::ButtomBar(QWidget *parent): QLabel(parent), buttomPic(NULL), buttomWord(NULL),
-    textTimer(NULL), textNumber(0), player(NULL)
+    textTimer(NULL), textNumber(0), player(NULL), timerInterval(1000)
 {
     layoutUI();
     control();
@@ -18,7 +18,7 @@ void ButtomBar::setTextNumber(int number)
 {
     textNumber = saveList.at(number);
     textTimer->stop();
-    textTimer->start(10000);
+    textTimer->start(timerInterval);
     slotChangeText();
 }
 
@@ -28,6 +28,7 @@ void ButtomBar::layoutUI()
     buttomWord = new QLabel(this);
     buttomPic->setGeometry(0, 0, 960, 238);
     buttomWord->setGeometry(238, 25, 800, 100);
+    buttomWord->show();
     setStyleSheet("QLabel{image:url(logginpage/框.png);}");
 }
 
@@ -247,6 +248,7 @@ void ButtomBar::slotChangeText()
     {
         changeWord(pageList.at(textNumber));
     }
+    mainWidget->setcurPage(textNumber);
     textNumber += 1;
 }
 
@@ -270,7 +272,7 @@ void ButtomBar::slotLoadPressed()
     {
         textNumber = saveList.at(inputValue);
         textTimer->stop();
-        textTimer->start(10000);
+        textTimer->start(timerInterval);
         slotChangeText();
     }
 }
@@ -284,7 +286,7 @@ void ButtomBar::slotQloadPressed()
 {
     textNumber = saveList.at(0);
     textTimer->stop();
-    textTimer->start(10000);
+    textTimer->start(timerInterval);
     slotChangeText();
 }
 
@@ -296,15 +298,16 @@ void ButtomBar::slotAutoPressed()
     }
     else
     {
-        textTimer->start(10000);
+        textTimer->start(timerInterval);
     }
 }
 
 void ButtomBar::slotSkipPressed()
 {
+    qDebug() << textNumber;
     textNumber += 1;
     textTimer->stop();
-    textTimer->start(10000);
+    textTimer->start(timerInterval);
     slotChangeText();
 }
 

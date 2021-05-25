@@ -6,6 +6,8 @@
 #include <QWidget>
 #include <QList>
 #include <QString>
+#include "mianwidget.h"
+
 class QLabel;
 class QMouseEvent;
 class QTimer;
@@ -18,6 +20,10 @@ public:
 
 public:
     void setTextNumber(int number);
+    void setMainWidget(MainWidget* w)
+    {
+        mainWidget = w;
+    }
 
 private:
     void layoutUI();
@@ -33,6 +39,8 @@ private:
     QMediaPlayer * player;
     QList<int> saveList;
     QList<QString> pageList;
+    MainWidget* mainWidget = nullptr;
+    int timerInterval;
 
 protected:
     void mouseReleaseEvent(QMouseEvent *event);
