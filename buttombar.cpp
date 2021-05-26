@@ -381,7 +381,7 @@ void ButtomBar::slotChangeText()
     case 0:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/白零/电码1.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/白零/电码1.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -397,7 +397,7 @@ void ButtomBar::slotChangeText()
     case 7:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/M/1恭迎多时了.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/M/1恭迎多时了.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -405,7 +405,7 @@ void ButtomBar::slotChangeText()
     case 9:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/M/2吾乃汝内心期望而产生.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/M/2吾乃汝内心期望而产生.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -413,7 +413,7 @@ void ButtomBar::slotChangeText()
     case 11:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/M/3如若这是汝所期望的.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/M/3如若这是汝所期望的.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -421,7 +421,7 @@ void ButtomBar::slotChangeText()
     case 13:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/M/4那么接下来.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/M/4那么接下来.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -429,7 +429,7 @@ void ButtomBar::slotChangeText()
     case 14:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/M/5擆擵擏懱.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/M/5擆擵擏懱.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -437,7 +437,7 @@ void ButtomBar::slotChangeText()
     case 15:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/M/6因为事故.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/M/6因为事故.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -445,7 +445,7 @@ void ButtomBar::slotChangeText()
     case 17:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/M/7那么.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/M/7那么.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -453,7 +453,7 @@ void ButtomBar::slotChangeText()
     case 18:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/M/8愙壓棃.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/M/8愙壓棃.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -461,7 +461,7 @@ void ButtomBar::slotChangeText()
     case 19:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/M/9啊差点忘了.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/M/9啊差点忘了.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -477,7 +477,7 @@ void ButtomBar::slotChangeText()
     case 21:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/白零/电码2.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/白零/电码2.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -485,7 +485,7 @@ void ButtomBar::slotChangeText()
     case 27:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/配/？？？/凭自己的.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/配/？？？/凭自己的.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -493,7 +493,7 @@ void ButtomBar::slotChangeText()
     case 31:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/配/？？？/路过的74.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/配/？？？/路过的74.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -501,7 +501,7 @@ void ButtomBar::slotChangeText()
     case 33:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/配/？？？/不好意思.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/配/？？？/不好意思.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -509,7 +509,7 @@ void ButtomBar::slotChangeText()
     case 35:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/配/？？？/不逗你了.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/配/？？？/不逗你了.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -525,7 +525,7 @@ void ButtomBar::slotChangeText()
     case 38:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/兄弟！.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/兄弟！.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -533,7 +533,7 @@ void ButtomBar::slotChangeText()
     case 46:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/白芊/555哥哥抱抱——.mp3"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/白芊/555哥哥抱抱.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -557,7 +557,7 @@ void ButtomBar::slotChangeText()
     case 56:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/白零/喵！.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/白零/喵！.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -565,7 +565,7 @@ void ButtomBar::slotChangeText()
     case 60:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/白零/喵~嗷！.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/白零/喵~嗷！.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -573,7 +573,7 @@ void ButtomBar::slotChangeText()
     case 63:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/林瑾/人家等你好辛苦.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/林瑾/人家等你好辛苦.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -581,7 +581,7 @@ void ButtomBar::slotChangeText()
     case 67:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/白零/电码3.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/白零/电码3.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -589,7 +589,7 @@ void ButtomBar::slotChangeText()
     case 69:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/好啦好啦别吓唬.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/好啦好啦别吓唬.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -597,7 +597,7 @@ void ButtomBar::slotChangeText()
     case 70:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/林瑾/乔丹你也在这啊.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/林瑾/乔丹你也在这啊.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -605,7 +605,7 @@ void ButtomBar::slotChangeText()
     case 71:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/明明我先.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/明明我先.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -666,7 +666,7 @@ void ButtomBar::slotChangeText()
     case 98:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/那堆教徒.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/那堆教徒.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -674,7 +674,7 @@ void ButtomBar::slotChangeText()
     case 100:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/对啊那群人信奉.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/对啊那群人信奉.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -690,7 +690,7 @@ void ButtomBar::slotChangeText()
     case 104:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/但是有一点.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/但是有一点.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -698,7 +698,7 @@ void ButtomBar::slotChangeText()
     case 105:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/林瑾/教会唯一的男人.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/林瑾/教会唯一的男人.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -706,7 +706,7 @@ void ButtomBar::slotChangeText()
     case 106:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/庞大的后宫.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/庞大的后宫.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -714,7 +714,7 @@ void ButtomBar::slotChangeText()
     case 107:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/林瑾/果然是渣男.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/林瑾/果然是渣男.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -739,7 +739,7 @@ void ButtomBar::slotChangeText()
     case 110:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/白零/喵呜~.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/白零/喵呜~.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -747,7 +747,7 @@ void ButtomBar::slotChangeText()
     case 112:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/正常男人都会想要的.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/正常男人都会想要的.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -755,7 +755,7 @@ void ButtomBar::slotChangeText()
     case 115:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/男人变态.m4a"));
+        player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/男人变态.mp3"));
         player->setVolume(100);
         player->play();
         break;

@@ -53,7 +53,7 @@ void MainWindow::mouseReleaseEvent(QMouseEvent *event)
 
 void MainWindow::layoutUI()
 {
-    setGeometry(0, 0, 960, 778);
+    setGeometry(0, 0, 960, 677);
 
     firstPic = new QLabel(this);
     secendPic = new QLabel(this);
@@ -93,7 +93,7 @@ void MainWindow::layoutUI()
 void MainWindow::control()
 {
     changeViewTimer = new QTimer(this);
-    changeViewTimer->start(1);
+    changeViewTimer->start(10000);
     player = new QMediaPlayer;
     connect(changeViewTimer, SIGNAL(timeout()), this, SLOT(slotChangeView()));
     connect(buttomBar, SIGNAL(signalMainPage()), this, SLOT(slotMainPage()));
@@ -142,6 +142,7 @@ void MainWindow::slotChangeView()
 {
     if(firstPic->isVisible())
     {
+        resize(960, 677);
         firstPic->hide();
         secendPic->show();
         player->setMedia(QUrl::fromLocalFile("7.mp3"));
@@ -152,6 +153,7 @@ void MainWindow::slotChangeView()
     {
         if(secendPic->isVisible())
         {
+            resize(960, 778);
             secendPic->hide();
             thridPic->show();
             changeViewTimer->stop();
