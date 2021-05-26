@@ -5,7 +5,8 @@
 #include <QTimer>
 #include <QMouseEvent>
 #include <QInputDialog>
-#include <QPushButton>
+#include <iostream>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
@@ -65,16 +66,8 @@ void MainWindow::layoutUI()
     buttomBar = new ButtomBar(this);
 
     mainWidget->setGeometry(0, 0, 960, 540);
-//    buttomBar->setGeometry(0, 540, 960, 238);
-
-    firstChoose = new QPushButton(this);
-    secondChoose = new QPushButton(this);
-    firstChoose->setGeometry(300, 100, 330, 100);
-    secondChoose->setGeometry(300, 250, 330, 100);
-    firstChoose->setStyleSheet("QPushButton{font-size: 10px;text-align: center center}");
-    secondChoose->setStyleSheet("QPushButton{font-size: 10px;text-align: center center}");
-    firstChoose->hide();
-    secondChoose->hide();
+    buttomBar->setGeometry(0, 540, 960, 238);
+    buttomBar->setMainWidget(mainWidget);
 
     firstPic->setStyleSheet("QLabel{image:url(logginpage/1.jpg);}");
     secendPic->setStyleSheet("QLabel{image:url(logginpage/2.jpg);}");
@@ -89,14 +82,9 @@ void MainWindow::layoutUI()
 void MainWindow::control()
 {
     changeViewTimer = new QTimer(this);
-    changeViewTimer->start(10000);
-    player = new QMediaPlayer;
+    changeViewTimer->start(1);
     connect(changeViewTimer, SIGNAL(timeout()), this, SLOT(slotChangeView()));
     connect(buttomBar, SIGNAL(signalMainPage()), this, SLOT(slotMainPage()));
-    connect(player, SIGNAL(stateChanged(QMediaPlayer::State)), this, SLOT(slotRestartMusic(QMediaPlayer::State)));
-    connect(buttomBar, SIGNAL(siganlChoose()), this, SLOT(slotChoose()));
-    connect(firstChoose, SIGNAL(pressed()), this, SLOT(slotFinishChoose()));
-    connect(secondChoose, SIGNAL(pressed()), this, SLOT(slotFinishChoose()));
 }
 
 void MainWindow::startGame()
@@ -111,6 +99,7 @@ void MainWindow::loadGame()
     bool ok = false;
     int inputValue = QInputDialog::getInt(NULL, "请选择读档序号", "vlaue:",
                                           1, -1, 40, 1, &ok);
+
     if (ok)
     {
         buttomBar->setTextNumber(inputValue);
@@ -139,9 +128,6 @@ void MainWindow::slotChangeView()
     {
         firstPic->hide();
         secendPic->show();
-        player->setMedia(QUrl::fromLocalFile("7.mp3"));
-        player->setVolume(50);
-        player->play();
     }
     else
     {
@@ -161,29 +147,4 @@ void MainWindow::slotMainPage()
     buttomBar->hide();
     mainWidget->hide();
     thridPic->show();
-}
-
-void MainWindow::slotRestartMusic(QMediaPlayer::State newState)
-{
-    if(QMediaPlayer::State::StoppedState == newState)
-    {
-        player->setMedia(QUrl::fromLocalFile("7.mp3"));
-        player->setVolume(50);
-        player->play();
-    }
-}
-
-void MainWindow::slotChoose()
-{
-    firstChoose->setText("车原来是指虎式坦克啊。");
-    secondChoose->setText("军备设施民用真的好吗。");
-    firstChoose->show();
-    secondChoose->show();
-}
-
-void MainWindow::slotFinishChoose()
-{
-    firstChoose->hide();
-    secondChoose->hide();
-    buttomBar->setTextNumber(89);
 }
