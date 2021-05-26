@@ -6,6 +6,8 @@
 #include <QMouseEvent>
 #include <QInputDialog>
 #include <QPushButton>
+#include <iostream>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
@@ -75,6 +77,8 @@ void MainWindow::layoutUI()
     secondChoose->setStyleSheet("QPushButton{font-size: 10px;text-align: center center}");
     firstChoose->hide();
     secondChoose->hide();
+    buttomBar->setGeometry(0, 540, 960, 238);
+    buttomBar->setMainWidget(mainWidget);
 
     firstPic->setStyleSheet("QLabel{image:url(logginpage/1.jpg);}");
     secendPic->setStyleSheet("QLabel{image:url(logginpage/2.jpg);}");
@@ -91,6 +95,7 @@ void MainWindow::control()
     changeViewTimer = new QTimer(this);
     changeViewTimer->start(10000);
     player = new QMediaPlayer;
+    changeViewTimer->start(1);
     connect(changeViewTimer, SIGNAL(timeout()), this, SLOT(slotChangeView()));
     connect(buttomBar, SIGNAL(signalMainPage()), this, SLOT(slotMainPage()));
     connect(player, SIGNAL(stateChanged(QMediaPlayer::State)), this, SLOT(slotRestartMusic(QMediaPlayer::State)));
@@ -111,6 +116,7 @@ void MainWindow::loadGame()
     bool ok = false;
     int inputValue = QInputDialog::getInt(NULL, "请选择读档序号", "vlaue:",
                                           1, -1, 40, 1, &ok);
+
     if (ok)
     {
         buttomBar->setTextNumber(inputValue);

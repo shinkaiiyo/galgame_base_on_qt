@@ -793,7 +793,7 @@ void ButtomBar::slotLoadPressed()
     {
         textNumber = saveList.at(inputValue);
         textTimer->stop();
-        textTimer->start(10000);
+        textTimer->start(timerInterval);
         slotChangeText();
     }
 }
@@ -807,7 +807,7 @@ void ButtomBar::slotQloadPressed()
 {
     textNumber = saveList.at(0);
     textTimer->stop();
-    textTimer->start(10000);
+    textTimer->start(timerInterval);
     slotChangeText();
 }
 
@@ -819,15 +819,16 @@ void ButtomBar::slotAutoPressed()
     }
     else
     {
-        textTimer->start(10000);
+        textTimer->start(timerInterval);
     }
 }
 
 void ButtomBar::slotSkipPressed()
 {
+    qDebug() << textNumber;
     textNumber += 1;
     textTimer->stop();
-    textTimer->start(10000);
+    textTimer->start(timerInterval);
     slotChangeText();
 }
 
