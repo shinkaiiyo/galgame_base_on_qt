@@ -31,7 +31,7 @@ void ButtomBar::layoutUI()
     buttomWord = new QLabel(this);
     buttomPic->setGeometry(0, 0, 960, 238);
     buttomWord->setGeometry(238, 25, 800, 200);
-    buttomWord->setStyleSheet("QLabel{font-size: 10px;text-align: center center}");
+    buttomWord->setStyleSheet("QLabel{font-size: 20px;text-align: center center}");
     buttomPic->setStyleSheet("QLabel{image:url(logginpage/框.png);}");
 }
 
@@ -40,6 +40,7 @@ void ButtomBar::control()
     textTimer = new QTimer(this);
     player = new QMediaPlayer(this);
     connect(textTimer, SIGNAL(timeout()), this, SLOT(slotChangeText()));
+    initWord();
 }
 
 void ButtomBar::initWord()
@@ -68,7 +69,7 @@ void ButtomBar::initWord()
     i++;
     pageList.insert(i, "M：恭迎多时了，吾主");
     i++;
-    pageList.insert(i, " 你：你是谁？");
+    pageList.insert(i, "你：你是谁？");
     i++;
     pageList.insert(i, "M：吾为汝内心期望而产生的引导者，将全心全意指引汝走向期望的道路");
     i++;
@@ -81,7 +82,8 @@ void ButtomBar::initWord()
     pageList.insert(i, "M:那么，接下来吾将为汝说明一些注意事项，\n"
                "之后的一段时间吾之力量将不足以支撑长期引导，故此还请务必牢记于心。");
     i++;
-    pageList.insert(i, "M：汝之肉体正处于长期植物人状态已达两年之余，汝名白颜，是一名极度普通的高中二年级学生。");
+    pageList.insert(i, "M：汝之肉体正处于长期植物人状态已达两年之余，汝名白颜，\n"
+                       "是一名极度普通的高中二年级学生。");
     i++;
     pageList.insert(i, "M：因为事故和特殊的药物导致汝的记忆中枢和认知状态受损，\n"
                "但可以得到的情报是现在这个领域之外，有几位对汝十分珍重的个体在等候。");
@@ -107,9 +109,11 @@ void ButtomBar::initWord()
     i++;
     pageList.insert(i, "游荡的灵魂回归了肉体，踏实的厚重感莫名让自己觉得安心了几分");
     i++; //change page
-    pageList.insert(i, "脸颊两侧盐分干涸后弥留的印记如同依附在甲板上的藤壶，虽然粗糙但余温犹存。或许是自己的，也或许是别人的。");
+    pageList.insert(i, "脸颊两侧盐分干涸后弥留的印记如同依附在甲板上的藤壶，虽然粗糙但余温犹存。\n"
+                       "或许是自己的，也或许是别人的。");
     i++;
-    pageList.insert(i, "网格状碎花的天花板，材质看起来像不规则大理石，与其称之为天花板，倒不如说那是地砖侵占了天花板原有的位置。\n"
+    pageList.insert(i, "网格状碎花的天花板，材质看起来像不规则大理石，与其称之为天花板，\n"
+                       "倒不如说那是地砖侵占了天花板原有的位置。\n"
                     "边角不规则的异色切块让这块马赛克似的天花板上像是多了几只眼睛，社恐或是强迫症患者看到大概会很不舒服吧，\n"
                     "是设计师的恶趣味么，或是工人的偷工减料也说不定。不...也许根本就是这里主人的爱好罢了。");
     i++;
@@ -233,7 +237,8 @@ void ButtomBar::initWord()
     i++;
     pageList.insert(i, "虽然多少已经猜到昏睡期间的换洗是谁在做了，但当着这么多人的面拜托自己的妹妹帮忙换衣服自然是做不出来。");
     i++;//change page
-    pageList.insert(i, "久违的，脚踏实地的感觉，全身的重心突然堆积在脚底，高强度的用力让膝盖直接提出抗议，要不是有人搀扶着现在大概已经对着地面一扣三拜了。");
+    pageList.insert(i, "久违的，脚踏实地的感觉，全身的重心突然堆积在脚底，高强度的用力让膝盖直接提出抗议，\n"
+                       "要不是有人搀扶着现在大概已经对着地面一扣三拜了。");
     i++;
     pageList.insert(i, "昏暗而拥挤的走廊，明明没有堆放任何杂物但依旧显得十分拥堵，灯光苟延残喘着尝试证明自己的剩余价值，\n"
                     "大概但有一些聒噪就会吓得立刻熄火。没有看到窗户，却能明显感觉到气流忙碌的进行着置换，\n"
@@ -242,21 +247,24 @@ void ButtomBar::initWord()
     i++;
     pageList.insert(i, "这条走廊里除了最远处的微弱光亮，似乎没看到其他病房，谈不上阴森，但总觉得那光亮更像是灯芯或是烛火。");
     i++;
-    pageList.insert(i, "这条走廊真的有尽头么。如果只有自己一个人的话，不知道要走多久才能到达尽头呢，不不，仅凭自己一个人，多半是不会走下去的吧。");
+    pageList.insert(i, "这条走廊真的有尽头么。如果只有自己一个人的话，不知道要走多久才能到达尽头呢，\n"
+                       "不不，仅凭自己一个人，多半是不会走下去的吧。");
     i++;
     pageList.insert(i, "这家医院的设计师真的是鬼才，这种阴间的病房设计仿佛就是在贴心的位患者提供停尸房前期体验活动。");
     i++;//change page
     pageList.insert(i, "终于到达了地表...瞬间收缩瞳孔的阳光...人类生存证明的嘈杂声，真是糟透了，这个毫无价值快要烂掉的城市。");
     i++;
     pageList.insert(i, "末了，空气的清新程度属实意料之外，虽然大脑可能已经忘记了，但肺部却如获新生，\n"
-                    "毕竟每一个肺泡都把不知前多久那个雾以吸为贵的年代刻在了DNA里。这些人类的发展居然没有带来环境的破坏，可喜可贺，可喜可贺。");
+                    "毕竟每一个肺泡都把不知前多久那个雾以吸为贵的年代刻在了DNA里。\n"
+                       "这些人类的发展居然没有带来环境的破坏，可喜可贺，可喜可贺。");
     i++;
     pageList.insert(i, "女队员：总长，车已经准备好了。");
     i++;
     //first choose
     pageList.insert(i, "江珂：没时间解释了，快上车。");
     i++;
-    pageList.insert(i, "半推半就的上了车，不过车里面还蛮大的。与外观不符的是这台车子内部丝毫不亚于一些高档房车，功能完善程度叹为观止。");
+    pageList.insert(i, "半推半就的上了车，不过车里面还蛮大的。\n"
+                       "与外观不符的是这台车子内部丝毫不亚于一些高档房车，功能完善程度叹为观止。");
     i++;
     pageList.insert(i, "身居其中完全可以自由的预览到车外的情况。如此奢侈的内部装修，大概是某个领导私吞国家拨款军费的直接表象了");
     i++;
@@ -266,11 +274,13 @@ void ButtomBar::initWord()
     i++;//change page
     pageList.insert(i, "果然，世界会随着自己改变这种事，根本不可能。说到底，我们又是何时认识到自己不是世界的主角呢。");
     i++;//change page
-    pageList.insert(i, "一群整齐划一的考斯普雷的人，虽然不知道他们在考斯什么，嘛，多半他们自己也不知道考斯什么仅仅是为了当前蹭热度吧");
+    pageList.insert(i, "一群整齐划一的考斯普雷的人，虽然不知道他们在考斯什么，\n"
+                       "嘛，多半他们自己也不知道考斯什么仅仅是为了当前蹭热度吧");
     i++;
     pageList.insert(i, "众教徒：啊~啊~~~");
     i++;
-    pageList.insert(i, "单纯的富有感情的拖长中音，人员看起来全都是女性，年纪可能最大不会超过40岁，最小的，唔，大概也就刚刚小学毕业的亚子。");
+    pageList.insert(i, "单纯的富有感情的拖长中音，人员看起来全都是女性，\n"
+                       "年纪可能最大不会超过40岁，最小的，唔，大概也就刚刚小学毕业的亚子。");
     i++;
     pageList.insert(i, "乔丹：哎？那堆教徒里是有美女吗你怎么这么在意。");
     i++;
@@ -770,6 +780,7 @@ void ButtomBar::slotChangeText()
         break;
     }
     changeWord(pageList.at(textNumber));
+    mainWidget->setcurPage(textNumber);
     textNumber += 1;
 }
 

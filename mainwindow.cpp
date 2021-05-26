@@ -93,9 +93,8 @@ void MainWindow::layoutUI()
 void MainWindow::control()
 {
     changeViewTimer = new QTimer(this);
-    changeViewTimer->start(10000);
-    player = new QMediaPlayer;
     changeViewTimer->start(1);
+    player = new QMediaPlayer;
     connect(changeViewTimer, SIGNAL(timeout()), this, SLOT(slotChangeView()));
     connect(buttomBar, SIGNAL(signalMainPage()), this, SLOT(slotMainPage()));
     connect(player, SIGNAL(stateChanged(QMediaPlayer::State)), this, SLOT(slotRestartMusic(QMediaPlayer::State)));
