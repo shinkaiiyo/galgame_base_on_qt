@@ -22,3 +22,5 @@ HEADERS  += MainWindow.h \
     mianwidget.h
 
 FORMS    +=
+
+RC_ICONS += logo.ico

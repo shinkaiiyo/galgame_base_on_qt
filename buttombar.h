@@ -18,7 +18,7 @@ public:
     ButtomBar(QWidget *parent);
 
 public:
-    void setTextNumber(int number);
+    void setTextNumber(int number, bool isSave);
     void setMainWidget(MainWidget* w)
     {
         mainWidget = w;
@@ -40,6 +40,7 @@ private:
     QList<QString> pageList;
     MainWidget* mainWidget = nullptr;
     int timerInterval;
+    bool isChoosing;
 
 
 protected:

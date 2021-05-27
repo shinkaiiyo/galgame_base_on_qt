@@ -17,13 +17,13 @@ CXXFLAGS      = -pipe -fno-keep-inline-dllexport -O2 -std=gnu++0x -frtti -Wall -
 INCPATH       = -I. -IC:\Qt\Qt5.6.3\5.6.3\mingw49_32\include -IC:\Qt\Qt5.6.3\5.6.3\mingw49_32\include\QtMultimedia -IC:\Qt\Qt5.6.3\5.6.3\mingw49_32\include\QtWidgets -IC:\Qt\Qt5.6.3\5.6.3\mingw49_32\include\QtGui -IC:\Qt\Qt5.6.3\5.6.3\mingw49_32\include\QtANGLE -IC:\Qt\Qt5.6.3\5.6.3\mingw49_32\include\QtNetwork -IC:\Qt\Qt5.6.3\5.6.3\mingw49_32\include\QtCore -Irelease -IC:\Qt\Qt5.6.3\5.6.3\mingw49_32\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-s -Wl,-subsystem,windows -mthreads
-LIBS        =        -lmingw32 -LC:\Qt\Qt5.6.3\5.6.3\mingw49_32\lib C:\Qt\Qt5.6.3\5.6.3\mingw49_32\lib\libqtmain.a -lshell32 -LC:\utils\my_sql\my_sql\lib -LC:\utils\postgresql\pgsql\lib C:\Qt\Qt5.6.3\5.6.3\mingw49_32\lib\libQt5Multimedia.a C:\Qt\Qt5.6.3\5.6.3\mingw49_32\lib\libQt5Widgets.a C:\Qt\Qt5.6.3\5.6.3\mingw49_32\lib\libQt5Gui.a C:\Qt\Qt5.6.3\5.6.3\mingw49_32\lib\libQt5Network.a C:\Qt\Qt5.6.3\5.6.3\mingw49_32\lib\libQt5Core.a 
+LIBS        =        -lmingw32 -LC:\Qt\Qt5.6.3\5.6.3\mingw49_32\lib C:\Qt\Qt5.6.3\5.6.3\mingw49_32\lib\libqtmain.a -lshell32 -LC:\utils\my_sql\my_sql\lib -LC:\utils\postgresql\pgsql\lib C:\Qt\Qt5.6.3\5.6.3\mingw49_32\lib\libQt5Multimedia.a C:\Qt\Qt5.6.3\5.6.3\mingw49_32\lib\libQt5Widgets.a C:\Qt\Qt5.6.3\5.6.3\mingw49_32\lib\libQt5Gui.a C:\Qt\Qt5.6.3\5.6.3\mingw49_32\lib\libQt5Network.a C:\Qt\Qt5.6.3\5.6.3\mingw49_32\lib\libQt5Core.a release\ver1_resource_res.o 
 QMAKE         = C:\Qt\Qt5.6.3\5.6.3\mingw49_32\bin\qmake.exe
 IDC           = idc
 IDL           = midl
 ZIP           = zip -r -9
 DEF_FILE      = 
-RES_FILE      = 
+RES_FILE      = release\ver1_resource_res.o
 COPY          = copy /y
 SED           = $(QMAKE) -install sed
 COPY_FILE     = copy /y
@@ -73,8 +73,11 @@ DESTDIR_TARGET = release\ver1.exe
 first: all
 all: Makefile.Release  $(DESTDIR_TARGET)
 
-$(DESTDIR_TARGET):  $(OBJECTS) 
+$(DESTDIR_TARGET):  $(OBJECTS) release/ver1_resource_res.o
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) $(OBJECTS)  $(LIBS)
+
+release/ver1_resource_res.o: ver1_resource.rc
+	windres -i ver1_resource.rc -o release\ver1_resource_res.o --include-dir=. $(DEFINES)
 
 qmake: FORCE
 	@$(QMAKE) -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" -o Makefile.Release ver1.pro
@@ -86,6 +89,7 @@ dist:
 
 clean: compiler_clean 
 	-$(DEL_FILE) release\main.o release\MainWindow.o release\ButtomBar.o release\mianwidget.o release\moc_MainWindow.o release\moc_ButtomBar.o release\moc_mianwidget.o
+	-$(DEL_FILE) release\ver1_resource_res.o
 
 distclean: clean 
 	-$(DEL_FILE) $(DESTDIR_TARGET)
@@ -214,6 +218,22 @@ release/moc_MainWindow.cpp: C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QMa
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qicon.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QList \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/QMediaPlayer \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediaplayer.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediaobject.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qtmultimediadefs.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmultimedia.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediacontent.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediaresource.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtNetwork/qnetworkrequest.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QSharedDataPointer \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QString \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QUrl \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QVariant \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediaenumdebug.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qmetaobject.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qaudio.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtNetwork/qnetworkconfiguration.h \
 		MainWindow.h
 	C:\Qt\Qt5.6.3\5.6.3\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/mkspecs/win32-g++ -ID:/code/final_course/ver1 -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtANGLE -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtNetwork -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore MainWindow.h -o release\moc_MainWindow.cpp
 
@@ -327,6 +347,7 @@ release/moc_ButtomBar.cpp: C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QObject
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QWidget \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QList \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QString \
+		mianwidget.h \
 		ButtomBar.h
 	C:\Qt\Qt5.6.3\5.6.3\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/mkspecs/win32-g++ -ID:/code/final_course/ver1 -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtANGLE -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtNetwork -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore ButtomBar.h -o release\moc_ButtomBar.cpp
 
@@ -564,6 +585,22 @@ release/main.o: main.cpp MainWindow.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qicon.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QList \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/QMediaPlayer \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediaplayer.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediaobject.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qtmultimediadefs.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmultimedia.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediacontent.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediaresource.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtNetwork/qnetworkrequest.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QSharedDataPointer \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QString \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QUrl \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QVariant \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediaenumdebug.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qmetaobject.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qaudio.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtNetwork/qnetworkconfiguration.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QApplication \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qapplication.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qcoreapplication.h \
@@ -682,6 +719,22 @@ release/MainWindow.o: MainWindow.cpp mainwindow.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qicon.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QList \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/QMediaPlayer \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediaplayer.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediaobject.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qtmultimediadefs.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmultimedia.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediacontent.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediaresource.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtNetwork/qnetworkrequest.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QSharedDataPointer \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QString \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QUrl \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QVariant \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qmediaenumdebug.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qmetaobject.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtMultimedia/qaudio.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtNetwork/qnetworkconfiguration.h \
 		mianwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QObject \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QWidget \
@@ -689,7 +742,6 @@ release/MainWindow.o: MainWindow.cpp mainwindow.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QLabel \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qlabel.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qframe.h \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QString \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QTimer \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qtimer.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qbasictimer.h \
@@ -701,7 +753,10 @@ release/MainWindow.o: MainWindow.cpp mainwindow.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtextcursor.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtextformat.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qpen.h \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtextoption.h
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtextoption.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QPushButton \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qpushbutton.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qabstractbutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\MainWindow.o MainWindow.cpp
 
 release/ButtomBar.o: ButtomBar.cpp ButtomBar.h \
@@ -815,6 +870,7 @@ release/ButtomBar.o: ButtomBar.cpp ButtomBar.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QWidget \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QList \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QString \
+		mianwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QMouseEvent \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QTimer \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qtimer.h \
@@ -956,7 +1012,9 @@ release/mianwidget.o: mianwidget.cpp mianwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qframe.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QTimer \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qtimer.h \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qbasictimer.h
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qbasictimer.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QDebug \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QMap
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mianwidget.o mianwidget.cpp
 
 release/moc_MainWindow.o: release/moc_MainWindow.cpp 

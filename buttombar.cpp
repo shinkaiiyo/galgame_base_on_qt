@@ -8,15 +8,19 @@
 #include <QInputDialog>
 
 ButtomBar::ButtomBar(QWidget *parent): QWidget(parent), buttomPic(NULL), buttomWord(NULL),
-    textTimer(NULL), textNumber(0), player(NULL)
+    textTimer(NULL), textNumber(0), player(NULL), isChoosing(false)
 {
     layoutUI();
     control();
 }
 
-void ButtomBar::setTextNumber(int number)
+void ButtomBar::setTextNumber(int number, bool isSave)
 {
-    textNumber = saveList.at(number);
+    if(isSave)
+        textNumber = saveList.at(number);
+    else
+        textNumber = number;
+        isChoosing = false;
     if(textTimer->isActive())
     {
         textTimer->stop();
@@ -30,7 +34,7 @@ void ButtomBar::layoutUI()
     buttomPic = new QLabel(this);
     buttomWord = new QLabel(this);
     buttomPic->setGeometry(0, 0, 960, 238);
-    buttomWord->setGeometry(238, 25, 800, 200);
+    buttomWord->setGeometry(238, 0, 800, 200);
     buttomWord->setStyleSheet("QLabel{font-size: 20px;text-align: center center}");
     buttomPic->setStyleSheet("QLabel{image:url(logginpage/框.png);}");
 }
@@ -105,23 +109,28 @@ void ButtomBar::initWord()
     pageList.insert(i, "-...-.---.-.-..-/-...------.--..-/-..---...-.-.-./\n"
                     "-.--.--.--.-..-/-.--.--.-.-..../-...-..----...--/-......-..--...-");
     i++;
-    pageList.insert(i, "又是一阵奇怪的杂音，不过多亏了这杂音，至少现在明显感觉得到身体中红液开始正常工作。");
+    pageList.insert(i, "又是一阵奇怪的杂音，不过多亏了这杂音，\n"
+                       "至少现在明显感觉得到身体中红液开始正常工作。");
     i++;
     pageList.insert(i, "游荡的灵魂回归了肉体，踏实的厚重感莫名让自己觉得安心了几分");
     i++; //change page
-    pageList.insert(i, "脸颊两侧盐分干涸后弥留的印记如同依附在甲板上的藤壶，虽然粗糙但余温犹存。\n"
-                       "或许是自己的，也或许是别人的。");
+    pageList.insert(i, "脸颊两侧盐分干涸后弥留的印记如同依附在甲板上的藤壶，\n"
+                       "虽然粗糙但余温犹存。或许是自己的，也或许是别人的。");
     i++;
     pageList.insert(i, "网格状碎花的天花板，材质看起来像不规则大理石，与其称之为天花板，\n"
                        "倒不如说那是地砖侵占了天花板原有的位置。\n"
-                    "边角不规则的异色切块让这块马赛克似的天花板上像是多了几只眼睛，社恐或是强迫症患者看到大概会很不舒服吧，\n"
-                    "是设计师的恶趣味么，或是工人的偷工减料也说不定。不...也许根本就是这里主人的爱好罢了。");
+                    "边角不规则的异色切块让这块马赛克似的天花板上像是多了几只眼睛，\n"
+                       "社恐或是强迫症患者看到大概会很不舒服吧，\n"
+                    "是设计师的恶趣味么，或是工人的偷工减料也说不定。\n"
+                       "不...也许根本就是这里主人的爱好罢了。");
     i++;
     pageList.insert(i, "？？？：哦呀，凭自己的意志醒来了呢 ");
     i++;//change page
-    pageList.insert(i, "没有什么不适，身体条件反射坐了起来，反倒是身上这些奇怪的管子立刻限制了更大幅度的运动。");
+    pageList.insert(i, "没有什么不适，身体条件反射坐了起来，\n"
+                       "反倒是身上这些奇怪的管子立刻限制了更大幅度的运动。");
     i++;
-    pageList.insert(i, "眼前是一名护士装少女，虽说是护士装，但看起来倒更像是cosplay，总之看起来非常不着调。");
+    pageList.insert(i, "眼前是一名护士装少女，虽说是护士装，\n"
+                       "但看起来倒更像是cosplay，总之看起来非常不着调。");
     i++;
     pageList.insert(i, "你：你是谁，这里是...医院么，我睡了多久？");
     i++;
@@ -136,7 +145,8 @@ void ButtomBar::initWord()
     pageList.insert(i, "？？？：不逗你了，我只是个普通的打工人罢了，\n"
                     "接下来的时间就交给你的家属和亲友啦，我还有其他的工要打，有缘再见~");
     i++;
-    pageList.insert(i, "话音未落，少女已经不见了踪影，速度之快堪比中午等待下课铃声瞬间冲向食堂的学生。");
+    pageList.insert(i, "话音未落，少女已经不见了踪影，\n"
+                       "速度之快堪比中午等待下课铃声瞬间冲向食堂的学生。");
     i++;
     pageList.insert(i, "请进");
     i++;
@@ -156,25 +166,30 @@ void ButtomBar::initWord()
     i++;
     pageList.insert(i, "和自己有许多相似之处的娇小少女，这无疑是年幼三岁的亲生妹妹白芊，\n"
                     "印象当中非常懂事，在这个父母双忙的年代承担了几乎全部家务，\n"
-                    "听说在她所在的班级也是充当了榜样级班长的角色，总之，因为这么个能干的妹妹存在总会酸到很多肥宅就是了");
+                    "听说在她所在的班级也是充当了榜样级班长的角色，\n"
+                       "总之，因为这么个能干的妹妹存在总会酸到很多肥宅就是了");
     i++;
     pageList.insert(i, "你：好了芊芊乖~你大哥我可是无敌的jo级生物，怎么可能丢下你不管呢~");
     i++;
     pageList.insert(i, "白芊：5555.....哥....哥....抱");
     i++;
-    pageList.insert(i, "看着泣不成声可怜的孩子，罪恶感油然而生，在自己昏睡的过程中，一个人大概吃了不少苦头吧");
+    pageList.insert(i, "看着泣不成声可怜的孩子，罪恶感油然而生，\n"
+                       "在自己昏睡的过程中，一个人大概吃了不少苦头吧");
     i++;
     pageList.insert(i, "你：真是个爱撒娇的孩子呢，放心，既然大哥在，为了守护你与世界为敌又有何妨");
     i++;
-    pageList.insert(i, "唔，总觉得有些中二，羞耻感瞬间爆棚，不过这种基本的觉悟可是一开始就应该做好了不是吗。");
+    pageList.insert(i, "唔，总觉得有些中二，羞耻感瞬间爆棚，\n"
+                       "不过这种基本的觉悟可是一开始就应该做好了不是吗。");
     i++;
     pageList.insert(i, "江珂：呦，终于清醒了么。在你昏睡的这段时间给大家造成了多少困扰清楚么。");
     i++;
     pageList.insert(i, "讲话还是一如既往的毫不客气呢，窗边年长自己三岁的高挑女性江珂，\n"
-                    "年纪轻轻就做到了城市治安部总长，此外还是我的邻居兼姐姐，虽然我们没有任何遗传学上的亲缘关系就是了。\n"
+                    "年纪轻轻就做到了城市治安部总长，此外还是我的邻居兼姐姐，\n"
+                       "虽然我们没有任何遗传学上的亲缘关系就是了。\n"
                     "不过，这个严厉仅仅是公众场合维持形象的表现罢了。");
     i++;
-    pageList.insert(i, "你：抱歉啊姐姐大人~长久以来辛苦你啦。不过在这里守着放着工作不管真的没问题吗~");
+    pageList.insert(i, "你：抱歉啊姐姐大人~长久以来辛苦你啦。\n"
+                       "不过在这里守着放着工作不管真的没问题吗~");
     i++;
     pageList.insert(i, "江珂：现在让你安全到家就是我的工作（啪）");
     i++;
@@ -185,7 +200,8 @@ void ButtomBar::initWord()
     pageList.insert(i, "0：喵~");
     i++;
     pageList.insert(i, "唉嘿，这个小糯米团子可是亲女儿，怎么看都是一只可爱的喵星人，\n"
-                    "虽然不太记得为什么要叫零这个名字，但潜意识告诉自己以前很多事情只会跟她讲。毕竟人畜无害的可爱猫猫谁不爱呢~");
+                    "虽然不太记得为什么要叫零这个名字，\n"
+                       "但潜意识告诉自己以前很多事情只会跟她讲。毕竟人畜无害的可爱猫猫谁不爱呢~");
     i++;
     pageList.insert(i, "你：咦，你的毛，变长了呢");
     i++;
@@ -204,14 +220,16 @@ void ButtomBar::initWord()
     i++;
     pageList.insert(i, "但凡男人听到这中酥酥麻麻的话应该都会兴奋吧，但不知怎的，却突然有些阵阵寒意。");
     i++;
-    pageList.insert(i, "这位少女是林瑾，既是邻居，也算是青梅竹马，无论外表还是能力都是金字塔顶尖存在，完全不是自己这种中下层人士可比的。");
+    pageList.insert(i, "这位少女是林瑾，既是邻居，也算是青梅竹马，\n"
+                       "无论外表还是能力都是金字塔顶尖存在，完全不是自己这种中下层人士可比的。");
     i++;
     pageList.insert(i, "你：让..让您久等了");
     i++;
     pageList.insert(i, "-...------.--..-/-..---...-.-.-./-.--..-.---..--/\n"
                     "-..---.-.---.-./-.------...-.../-.-..--.---...-/-..-.--..--.-..-");
     i++;
-    pageList.insert(i, "咦，幻听了么，又是奇怪的杂音。虽说听起来像是某种电磁波震动，但却夹杂着类似女性的音色。");
+    pageList.insert(i, "咦，幻听了么，又是奇怪的杂音。\n"
+                       "虽说听起来像是某种电磁波震动，但却夹杂着类似女性的音色。");
     i++;
     pageList.insert(i, "乔丹：好了好了你就别吓唬他了，这才刚醒好好让他恢复一下吧。");
     i++;
@@ -235,22 +253,26 @@ void ButtomBar::initWord()
     i++;
     pageList.insert(i, "你：额，我自己能行");
     i++;
-    pageList.insert(i, "虽然多少已经猜到昏睡期间的换洗是谁在做了，但当着这么多人的面拜托自己的妹妹帮忙换衣服自然是做不出来。");
+    pageList.insert(i, "虽然多少已经猜到昏睡期间的换洗是谁在做了，\n"
+                       "但当着这么多人的面拜托自己的妹妹帮忙换衣服自然是做不出来。");
     i++;//change page
     pageList.insert(i, "久违的，脚踏实地的感觉，全身的重心突然堆积在脚底，高强度的用力让膝盖直接提出抗议，\n"
                        "要不是有人搀扶着现在大概已经对着地面一扣三拜了。");
     i++;
     pageList.insert(i, "昏暗而拥挤的走廊，明明没有堆放任何杂物但依旧显得十分拥堵，灯光苟延残喘着尝试证明自己的剩余价值，\n"
                     "大概但有一些聒噪就会吓得立刻熄火。没有看到窗户，却能明显感觉到气流忙碌的进行着置换，\n"
-                    "这种感觉就像是女人的头发横扫似的不断摩擦擦着皮肤表面的每一个毛囊。自己这件病房大概是最里面的一间吧，\n"
+                    "这种感觉就像是女人的头发横扫似的不断摩擦擦着皮肤表面的每一个毛囊。\n"
+                       "自己这件病房大概是最里面的一间吧，\n"
                     "总觉得能在最里面房间完好无损走出来真是奇迹。");
     i++;
-    pageList.insert(i, "这条走廊里除了最远处的微弱光亮，似乎没看到其他病房，谈不上阴森，但总觉得那光亮更像是灯芯或是烛火。");
+    pageList.insert(i, "这条走廊里除了最远处的微弱光亮，似乎没看到其他病房，\n"
+                       "谈不上阴森，但总觉得那光亮更像是灯芯或是烛火。");
     i++;
     pageList.insert(i, "这条走廊真的有尽头么。如果只有自己一个人的话，不知道要走多久才能到达尽头呢，\n"
                        "不不，仅凭自己一个人，多半是不会走下去的吧。");
     i++;
-    pageList.insert(i, "这家医院的设计师真的是鬼才，这种阴间的病房设计仿佛就是在贴心的位患者提供停尸房前期体验活动。");
+    pageList.insert(i, "这家医院的设计师真的是鬼才，\n"
+                       "这种阴间的病房设计仿佛就是在贴心的位患者提供停尸房前期体验活动。");
     i++;//change page
     pageList.insert(i, "终于到达了地表...瞬间收缩瞳孔的阳光...人类生存证明的嘈杂声，真是糟透了，这个毫无价值快要烂掉的城市。");
     i++;
@@ -266,13 +288,17 @@ void ButtomBar::initWord()
     pageList.insert(i, "半推半就的上了车，不过车里面还蛮大的。\n"
                        "与外观不符的是这台车子内部丝毫不亚于一些高档房车，功能完善程度叹为观止。");
     i++;
-    pageList.insert(i, "身居其中完全可以自由的预览到车外的情况。如此奢侈的内部装修，大概是某个领导私吞国家拨款军费的直接表象了");
+    pageList.insert(i, "身居其中完全可以自由的预览到车外的情况。\n"
+                       "如此奢侈的内部装修，大概是某个领导私吞国家拨款军费的直接表象了");
     i++;
-    pageList.insert(i, "广播：上津门交通安全部门提醒您 道路千万条 安全第一条 出行不规范 亲人两行泪");
+    pageList.insert(i, "广播：上津门交通安全部门提醒您 \n"
+                       "道路千万条 安全第一条 出行不规范 亲人两行泪");
     i++;
-    pageList.insert(i, "完全没有感情的棒读，自然也不会真的有人会去听从劝告。毕竟人类对于自己不感兴趣的东西既无法看到也无法认知。");
+    pageList.insert(i, "完全没有感情的棒读，自然也不会真的有人会去听从劝告。\n"
+                       "毕竟人类对于自己不感兴趣的东西既无法看到也无法认知。");
     i++;//change page
-    pageList.insert(i, "果然，世界会随着自己改变这种事，根本不可能。说到底，我们又是何时认识到自己不是世界的主角呢。");
+    pageList.insert(i, "果然，世界会随着自己改变这种事，根本不可能。\n"
+                       "说到底，我们又是何时认识到自己不是世界的主角呢。");
     i++;//change page
     pageList.insert(i, "一群整齐划一的考斯普雷的人，虽然不知道他们在考斯什么，\n"
                        "嘛，多半他们自己也不知道考斯什么仅仅是为了当前蹭热度吧");
@@ -336,46 +362,54 @@ void ButtomBar::initWord()
 
 void ButtomBar::mouseReleaseEvent(QMouseEvent *event)
 {
-    if(event->button() != Qt::LeftButton)
+    if(!isChoosing)
     {
-        return;
-    }
-    if(event->x() <= 332 && event->y() <= 232 && event->x() >= 244 && event->y() >= 214)
-    {
-        slotSavePressed();
-    }
-    else if(event->x() <= 434 && event->y() <= 232 && event->x() >= 347 && event->y() >= 214)
-    {
-        slotLoadPressed();
-    }
-    else if(event->x() <= 539 && event->y() <= 232 && event->x() >= 450 && event->y() >= 214)
-    {
-        slotQsavePressed();
-    }
-    else if(event->x() <= 641 && event->y() <= 232 && event->x() >= 553 && event->y() >= 214)
-    {
-        slotQloadPressed();
-    }
-    else if(event->x() <= 744 && event->y() <= 232 && event->x() >= 656 && event->y() >= 214)
-    {
-        slotAutoPressed();
-    }
-    else if(event->x() <= 880 && event->y() <= 232 && event->x() >= 759 && event->y() >= 214)
-    {
-        slotSkipPressed();
-    }
-    else if(event->x() <= 950 && event->y() <= 232 && event->x() >= 863 && event->y() >= 214)
-    {
-        slotSecedePressed();
-    }
-    else
-    {
-       slotChangeText();
+        if(event->button() != Qt::LeftButton)
+        {
+            return;
+        }
+        if(event->x() <= 332 && event->y() <= 232 && event->x() >= 244 && event->y() >= 214)
+        {
+            slotSavePressed();
+        }
+        else if(event->x() <= 434 && event->y() <= 232 && event->x() >= 347 && event->y() >= 214)
+        {
+            slotLoadPressed();
+        }
+        else if(event->x() <= 539 && event->y() <= 232 && event->x() >= 450 && event->y() >= 214)
+        {
+            slotQsavePressed();
+        }
+        else if(event->x() <= 641 && event->y() <= 232 && event->x() >= 553 && event->y() >= 214)
+        {
+            slotQloadPressed();
+        }
+        else if(event->x() <= 744 && event->y() <= 232 && event->x() >= 656 && event->y() >= 214)
+        {
+            slotAutoPressed();
+        }
+        else if(event->x() <= 880 && event->y() <= 232 && event->x() >= 759 && event->y() >= 214)
+        {
+            slotSkipPressed();
+        }
+        else if(event->x() <= 950 && event->y() <= 232 && event->x() >= 863 && event->y() >= 214)
+        {
+            slotSecedePressed();
+        }
+        else
+        {
+           slotChangeText();
+        }
     }
 }
 
 void ButtomBar::slotChangeText()
 {
+    if(textNumber > 121)
+    {
+        changeWord("未完待续");
+        return;
+    }
     switch(textNumber)
     {
     case 0:
@@ -469,7 +503,7 @@ void ButtomBar::slotChangeText()
     case 20:
     {
         player->stop();
-        player->setMedia(QUrl::fromLocalFile("音效/推门.WAV"));
+        player->setMedia(QUrl::fromLocalFile("音效/推门.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -526,6 +560,14 @@ void ButtomBar::slotChangeText()
     {
         player->stop();
         player->setMedia(QUrl::fromLocalFile("cv/主/乔丹/兄弟！.mp3"));
+        player->setVolume(100);
+        player->play();
+        break;
+    }
+    case 42:
+    {
+        player->stop();
+        player->setMedia(QUrl::fromLocalFile("cv/主/白芊/人家找你好辛苦呢.mp3"));
         player->setVolume(100);
         player->play();
         break;
@@ -640,12 +682,14 @@ void ButtomBar::slotChangeText()
         player->setMedia(QUrl::fromLocalFile("cv/配/npc/队长（女）/车准备好了.mp3"));
         player->setVolume(100);
         player->play();
-        break;
         if(textTimer->isActive())
         {
             textTimer->stop();
-            emit signalChoose();
         }
+        emit signalChoose();
+        isChoosing = true;
+        break;
+
     }
     case 89:
     {
