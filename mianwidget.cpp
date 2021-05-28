@@ -14,6 +14,8 @@ struct GameImage
 QMap<int, GameImage> pages =
 {
     { 0, { "", "背景/black.png" } },
+    { 7, { "", "背景/sss.png" } },
+    { 20, { "", "背景/black.png" } },
     { 26, { "", "背景/天花板.jpg" } },
     { 27, { "人/配/NPC/护士？.png", "背景/医院病房(昼)_540.png" } },
     { 38, { "人/主/乔丹/乔丹 开心.png", "背景/医院病房(昼)_540.png" } },
@@ -88,7 +90,7 @@ void MainWidget::layoutUI()
     backgroundLabel = new QLabel(this);
     peopleLable = new QLabel(this);
 
-    peopleLable->setGeometry(0, 0, 300, 540);
+    peopleLable->setGeometry(66, 90, 828, 450);
     backgroundLabel->setGeometry(0, 0, 960, 540);
 }
 

@@ -4,7 +4,7 @@
 #  include <windows.h>
 # endif
 
-IDI_ICON1	ICON	DISCARDABLE	"D:\\code\\final_course\\ver1\\logo.ico"
+IDI_ICON1	ICON	DISCARDABLE	"D:\\work\\galgame_base_on_qt\\logo.ico"
 
 VS_VERSION_INFO VERSIONINFO
 	FILEVERSION 0,0,0,0

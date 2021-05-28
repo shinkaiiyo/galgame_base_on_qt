@@ -388,11 +388,11 @@ void ButtomBar::mouseReleaseEvent(QMouseEvent *event)
         {
             slotAutoPressed();
         }
-        else if(event->x() <= 880 && event->y() <= 232 && event->x() >= 759 && event->y() >= 214)
+        else if(event->x() <= 800 && event->y() <= 232 && event->x() >= 759 && event->y() >= 214)
         {
             slotSkipPressed();
         }
-        else if(event->x() <= 950 && event->y() <= 232 && event->x() >= 863 && event->y() >= 214)
+        else if(event->x() <= 950 && event->y() <= 232 && event->x() >= 840 && event->y() >= 214)
         {
             slotSecedePressed();
         }
